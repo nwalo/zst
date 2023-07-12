@@ -81,6 +81,9 @@ const Card = ({ homes, handleLike }) => {
           2,403 kilometers away
         </Typography>
         <Typography fontSize="14px" color="#717171">
+          Hosted by Victor
+        </Typography>
+        <Typography fontSize="14px" color="#717171">
           Jul 4 – 11
         </Typography>
         <Typography fontSize="15px" fontWeight="500">
