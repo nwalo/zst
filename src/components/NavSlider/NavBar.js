@@ -1,10 +1,11 @@
 import React from "react";
 import NavSlider from "./NavSlider";
-import { Grid } from "@mui/material";
+import { Grid, useMediaQuery } from "@mui/material";
 import NavFilter from "./NavFilter";
 import "./NavSlide.css";
 
 const NavBar = () => {
+  const isLessThan900 = useMediaQuery("(max-width:900px)");
   return (
     <div className="navbar">
       <Grid container spacing={0}>
@@ -12,9 +13,13 @@ const NavBar = () => {
           <NavSlider />
         </Grid>
         <Grid item sx={{ margin: "0 20px" }}></Grid>
-        <Grid item sm={2} md={1}>
-          <NavFilter />
-        </Grid>
+        {isLessThan900 ? (
+          ""
+        ) : (
+          <Grid item sm={2} md={1}>
+            <NavFilter />
+          </Grid>
+        )}
       </Grid>
     </div>
   );

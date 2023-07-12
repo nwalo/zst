@@ -1,19 +1,44 @@
-import { Stack } from "@mui/material";
+import { Fab, Stack, useMediaQuery } from "@mui/material";
 import React from "react";
 import "./Footer.css";
-import { KeyboardArrowUp } from "@mui/icons-material";
+import { KeyboardArrowUp, Language } from "@mui/icons-material";
 import { PiDot } from "react-icons/pi";
+import { FaMap } from "react-icons/fa";
 const Footer = () => {
+  const isLessThan1100 = useMediaQuery("(max-width:1100px)");
+
   return (
     <div className="footer">
+      <Fab
+        sx={{
+          position: "absolute",
+          bottom: "100px",
+          color: "common.white",
+          bgcolor: "#303030",
+          "&:hover": {
+            bgcolor: "#404040",
+          },
+          textTransform: "capitalize",
+        }}
+        variant="extended"
+        onClick={() => window.location.assign("https://www.google.com/maps")}
+      >
+        Show map
+        <FaMap style={{ marginLeft: "10px" }} fontSize="20px" />
+      </Fab>
       <Stack
         className="foot"
-        direction={"row"}
+        direction={isLessThan1100 ? "column" : "row"}
         alignItems="center"
         justifyContent="space-between"
       >
         <Stack>
-          <Stack className="ft-right" direction={"row"} alignItems="center">
+          <Stack
+            className="ft-right"
+            flexWrap="wrap"
+            direction={"row"}
+            alignItems="center"
+          >
             <p>© 2023 Airbnb, Inc.</p> <PiDot margin="0" fontSize="16px" />
             <p> Terms</p> <PiDot margin="0" fontSize="16px" />
             <p> Sitemap</p> <PiDot margin="0" fontSize="16px" />
@@ -58,7 +83,8 @@ const Footer = () => {
         </Stack>
         <Stack fontWeight={600} direction={"row"}>
           <Stack direction={"row"} alignItems="center">
-            <p>English (US) </p> <p>$ USD</p>
+            <Language sx={{ fontSize: "20px" }} /> <p>English (US) </p>{" "}
+            <p>$ USD</p>
           </Stack>
           <Stack direction={"row"} alignItems="center">
             <p style={{ margin: 0 }}>Support & resources</p> <KeyboardArrowUp />

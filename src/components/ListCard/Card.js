@@ -1,13 +1,4 @@
 import React from "react";
-// import HouseImg from "../../assets/images/house.webp";
-// import BedImg from "../../assets/images/bed.webp";
-// import InsideImg from "../../assets/images/inside.webp";
-// import KitchenImg from "../../assets/images/kitchen.webp";
-// import NightImg from "../../assets/images/night.webp";
-// import PoolImg from "../../assets/images/pool.webp";
-// import Pool2Img from "../../assets/images/pool2.webp";
-// import RoofImg from "../../assets/images/roof.webp";
-// import TreeImg from "../../assets/images/tree.webp";
 import "./Card.css";
 import Like from "../Icons/Like";
 import Unlike from "../Icons/Unlike";
@@ -15,7 +6,7 @@ import { Stack, Typography } from "@mui/material";
 import Slider from "react-slick";
 import { IoIosStar } from "react-icons/io";
 
-const Card = ({ homes }) => {
+const Card = ({ homes, handleLike }) => {
   const settings = {
     dots: true,
     infinite: false,
@@ -54,18 +45,14 @@ const Card = ({ homes }) => {
     // ],
   };
 
-  const handleLike = ({ index, i }) => {
-    console.log(index, i);
-  };
-
   return (
     <div className="card">
+      <div className="likeBtn" onClick={(e) => handleLike(homes.id)}>
+        {homes.liked ? <Like /> : <Unlike />}
+      </div>
       <Slider {...settings}>
         {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((e, i) => (
-          <div key={i} style={{ position: "relative" }}>
-            <div className="likeBtn" onClick={(index) => handleLike(index, i)}>
-              {1 > 2 ? <Like /> : <Unlike />}
-            </div>
+          <div key={i}>
             <div
               className="cardImg"
               style={{ backgroundImage: `url(${homes.image})` }}
