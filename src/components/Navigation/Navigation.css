@@ -1,0 +1,32 @@
+.Navigation {
+  width: 95%;
+  /* height: 100vh; */
+  margin: 0 auto;
+  font-size: 15px !important;
+}
+
+.Navigation .searchBorder {
+  border: 1px solid #dddddd;
+  padding: 8px 8px 8px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.Navigation .menuBorder {
+  border: 1px solid #dddddd;
+  padding: 5px 5px 5px 10px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.Navigation .searchBorder:hover,
+.Navigation .menuBorder:hover {
+  box-shadow: 0px 2px 4px #dddddd;
+}
+
+@media (max-width: 850px) {
+  .Navigation {
+    width: 95%;
+    margin: 0 auto;
+  }
+}

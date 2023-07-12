@@ -1,0 +1,70 @@
+.navbar {
+  /* border-top: 1px solid #dddddd; */
+  padding: 20px 0;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0px 3px 3px #30303000;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+
+.slick-arrow {
+  background-color: #ff385c;
+  color: #ff385c;
+  margin: 0 -5px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+}
+.slick-arrow:hover {
+  background-color: #ff385c;
+}
+.slick-arrow:active {
+  background-color: #ff385c;
+}
+.slick-prev:before,
+.slick-next:before {
+  font-size: 20px;
+  background-color: #ff385c !important;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+.navSlider .slick-disabled {
+  display: none !important;
+}
+.navSlider .slick-slide {
+  width: fit-content !important;
+  margin: 10px 20px;
+  cursor: pointer;
+}
+.navSlider .navSliderContain:hover {
+  opacity: 1 !important;
+}
+.navSliderContain {
+  opacity: 0.4;
+}
+.navSliderContain.active {
+  opacity: 1 !important;
+}
+.navSliderContain.active .navSliderTitle {
+  border-bottom: 2px solid #303030;
+}
+.slick-prev {
+  left: 0px;
+}
+.slick-next {
+  right: 0px;
+}
+
+/* .brand_slider {
+  height: 100px;
+  background: white;
+  margin: 20px 5px;
+  position: relative;
+} */

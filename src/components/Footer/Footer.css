@@ -1,0 +1,27 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #dddddd;
+}
+
+.foot {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.foot p {
+  margin: 0 10px;
+}
+
+.foot .ft-right p {
+  margin: 0;
+}
+
+.foot p:hover,
+.foot p:active {
+  text-decoration: underline;
+  cursor: pointer;
+}
